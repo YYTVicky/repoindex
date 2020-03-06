@@ -112,6 +112,7 @@ class BundleAnalyzer implements ResourceAnalyzer {
 	}
 	
 	private String calculateSHA(Resource resource) throws IOException, NoSuchAlgorithmException {
+		/** SHA_256 is insecure, recommend SHA-512 */
 		MessageDigest digest = MessageDigest.getInstance(SHA_256);
 		byte[] buf = new byte[1024];
 		
